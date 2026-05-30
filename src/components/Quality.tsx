@@ -96,7 +96,7 @@ const Quality: React.FC = () => {
   ];
 
   return (
-    <section className="py-section-gap bg-inverse-surface text-inverse-on-surface overflow-hidden" id="process">
+    <section className="hidden md:block py-section-gap bg-inverse-surface text-inverse-on-surface overflow-hidden" id="process">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         
         {/* Section Header */}

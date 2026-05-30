@@ -138,7 +138,7 @@ const Clients: React.FC<{ clients?: any[] }> = ({ clients }) => {
             {[...items, ...items].map((test, idx) => (
               <div 
                 key={idx}
-                className="w-[420px] flex-shrink-0 bg-white rounded-brand p-8 border border-outline-variant/20 shadow-md hover:shadow-xl hover:border-secondary/30 transition-all flex flex-col items-center text-center justify-between"
+                className="w-[85vw] md:w-[420px] flex-shrink-0 bg-white rounded-brand p-8 border border-outline-variant/20 shadow-md hover:shadow-xl hover:border-secondary/30 transition-all flex flex-col items-center text-center justify-between"
               >
                 {/* Logo Container */}
                 <div className="w-full flex justify-center items-center h-24 mb-6 bg-surface-mist rounded-xl border border-outline-variant/10 p-4">

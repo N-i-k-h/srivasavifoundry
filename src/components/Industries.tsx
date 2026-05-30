@@ -10,7 +10,7 @@ const Industries: React.FC = () => {
   ];
 
   return (
-    <section className="py-section-gap" id="industries">
+    <section className="hidden md:block py-section-gap" id="industries">
       <div className="max-w-container-max mx-auto px-margin-desktop">
         
         {/* Header */}

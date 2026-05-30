@@ -216,7 +216,7 @@ function App() {
           <Hero banners={banners} />
           
           {/* Stats Section */}
-          <section className="py-[48px] bg-surface">
+          <section className="hidden md:block py-[48px] bg-surface">
             <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter">
               <div className="text-center p-8 glass-card rounded-brand active-glow transition-all">
                 <div className="font-display-lg text-headline-md text-secondary mb-2">25+</div>

@@ -88,7 +88,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
       </section>
 
       {/* Section 2: Heritage Grid */}
-      <section className="py-14 px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
+      <section className="hidden md:block py-14 px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
           <div className="md:col-span-5 space-y-6">
             <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase leading-tight">25 Years of <br/>Undefeated Success</h2>

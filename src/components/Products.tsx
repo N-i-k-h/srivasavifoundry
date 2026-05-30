@@ -89,11 +89,11 @@ const Products: React.FC<ProductsProps> = ({ onSelectProduct, products }) => {
         </div>
 
         {/* 3-Column Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-3 gap-gutter pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
           {items.map((product) => (
             <div 
               key={product.id} 
-              className="glass-card rounded-brand p-4 group hover:shadow-xl transition-all"
+              className="min-w-[85vw] md:min-w-0 snap-center shrink-0 glass-card rounded-brand p-4 group hover:shadow-xl transition-all"
             >
               {/* Product Image */}
               <div className="aspect-[4/3] rounded-brand overflow-hidden bg-surface-mist mb-4 relative border border-outline-variant/10">

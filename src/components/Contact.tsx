@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
       <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         
         {/* Left details */}
-        <div className="space-y-8">
+        <div className="hidden lg:block space-y-8">
           <h2 className="font-headline-md text-display-lg-mobile md:text-headline-md uppercase text-on-surface">Ready to start your technical project?</h2>
           <p className="text-on-surface-variant text-body-lg">Get in touch with our engineering team for specialized casting requirements or volume quotes. Commitment to excellence in every pour.</p>
           

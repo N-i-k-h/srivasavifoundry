@@ -149,12 +149,6 @@ const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile Hamburger Button */}
         <div className="flex md:hidden items-center gap-3">
           <button
-            onClick={onRequestQuote}
-            className="bg-tertiary text-white px-4 py-2 rounded-brand font-bold text-xs"
-          >
-            Quote
-          </button>
-          <button
             onClick={() => setIsOpen(!isOpen)}
             className="p-1.5 rounded-md border border-[#747878]/20 text-on-surface hover:bg-black/5"
             aria-label="Toggle menu"

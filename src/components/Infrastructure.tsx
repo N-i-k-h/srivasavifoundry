@@ -12,10 +12,10 @@ const Infrastructure: React.FC = () => {
         </div>
 
         {/* Bento Grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 min-h-[490px]">
+        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-12 gap-6 min-h-[490px] pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
           
           {/* Melting Unit (Wide card) */}
-          <div className="md:col-span-8 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-8 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0">
             <img 
               alt="Melting Unit" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -30,7 +30,7 @@ const Infrastructure: React.FC = () => {
           </div>
 
           {/* Spectro Lab (Tall card) */}
-          <div className="md:col-span-4 md:row-span-2 rounded-brand overflow-hidden relative group bg-tertiary border border-outline-variant/10 shadow-sm">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-2 rounded-brand overflow-hidden relative group bg-tertiary border border-outline-variant/10 shadow-sm shrink-0">
             <img 
               alt="Spectro Lab" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60" 
@@ -45,7 +45,7 @@ const Infrastructure: React.FC = () => {
           </div>
 
           {/* Moulding Section */}
-          <div className="md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0">
             <img 
               alt="Moulding Section" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -60,7 +60,7 @@ const Infrastructure: React.FC = () => {
           </div>
 
           {/* Quality Testing */}
-          <div className="md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0">
             <img 
               alt="Inspection" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
