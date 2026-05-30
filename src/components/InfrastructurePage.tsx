@@ -21,7 +21,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
             <span className="inline-block px-4 py-1.5 bg-secondary text-white rounded-full font-label-caps text-xs mb-6 uppercase tracking-widest">
               Precision Casting Excellence
             </span>
-            <h1 className="font-display-lg text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight uppercase font-bold">
+            <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 leading-tight uppercase font-bold">
               World-Class Manufacturing <span className="text-secondary-fixed-dim">Infrastructure</span>
             </h1>
             <p className="font-body-lg text-sm md:text-base text-primary-fixed-dim mb-8 max-w-2xl leading-relaxed">

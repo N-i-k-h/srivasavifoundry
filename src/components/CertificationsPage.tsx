@@ -125,7 +125,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
         <div className="max-w-container-max mx-auto relative z-10">
           <div className="max-w-3xl space-y-6">
             <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-secondary font-label-caps text-xs uppercase tracking-widest font-bold">Global Standards</span>
-            <h1 className="font-display-lg text-4xl md:text-5xl lg:text-6xl text-on-surface mb-4 leading-tight font-bold uppercase">
+            <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface mb-4 leading-tight font-bold uppercase">
               Engineering <br/><span className="text-secondary">Excellence</span> Certified.
             </h1>
             <p className="font-body-lg text-sm md:text-base text-on-surface-variant max-w-xl leading-relaxed">

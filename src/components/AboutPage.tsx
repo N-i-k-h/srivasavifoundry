@@ -56,7 +56,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
           <div className="max-w-3xl space-y-8">
             <div className="space-y-4">
               <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-secondary font-label-caps text-xs uppercase tracking-widest font-bold">Est. 1997</span>
-              <h1 className="font-display-lg text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-on-surface font-bold uppercase">
+              <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-on-surface font-bold uppercase">
                 Mastery in the art of <br/>
                 <span className="text-secondary">Manufacturing.</span>
               </h1>
@@ -260,8 +260,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
 
       {/* Section 5: High-End Visual Break */}
       <section className="py-14 bg-surface-container">
-        <div className="px-margin-desktop max-w-container-max mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 rounded-[32px] overflow-hidden shadow-xl border border-outline-variant/20 bg-white">
+        <div className="px-0 md:px-margin-desktop max-w-container-max mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 rounded-none md:rounded-[32px] overflow-hidden shadow-none md:shadow-xl border-y md:border border-outline-variant/20 bg-white">
             <div className="p-8 md:p-14 flex flex-col justify-center space-y-8">
               <div className="space-y-3">
                 <span className="text-secondary font-label-caps text-xs uppercase tracking-widest font-bold">Innovation at Scale</span>

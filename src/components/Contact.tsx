@@ -74,7 +74,7 @@ const Contact: React.FC = () => {
         </div>
 
         {/* Right Form Card */}
-        <div className="bg-white p-10 rounded-brand shadow-2xl border border-glass-border">
+        <div className="bg-white p-6 md:p-10 rounded-none md:rounded-brand shadow-none md:shadow-2xl border-x-0 md:border-x border-y border-glass-border -mx-5 md:mx-0">
           {submitted ? (
             <div className="text-center py-10 space-y-4">
               <div className="w-12 h-12 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mx-auto">

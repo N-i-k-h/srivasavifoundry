@@ -11,6 +11,7 @@ interface AdminDashboardProps {
 
 const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefreshData }) => {
   const [token, setToken] = useState<string | null>(localStorage.getItem('adminToken'));
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState('');
@@ -515,9 +516,42 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
 
   // Render Dashboard view
   return (
-    <div className="min-h-screen bg-[#f8f6f5] flex flex-col md:flex-row text-on-surface">
+    <div className="min-h-screen bg-[#f8f6f5] flex flex-col md:flex-row text-on-surface relative overflow-x-hidden">
+      
+      {/* Mobile Header Bar */}
+      <div className="flex md:hidden items-center justify-between bg-[#0A2A54] text-white p-4 border-b border-white/10 z-30 w-full">
+        <div className="flex items-center gap-2 select-none">
+          <svg viewBox="0 0 100 100" className="h-6 w-6 text-white">
+            <circle cx="50" cy="50" r="44" stroke="currentColor" strokeWidth="6" fill="none" />
+            <path d="M 12 32 H 38 L 50 78 L 62 32 H 88" stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+          </svg>
+          <span className="font-bold text-xs uppercase tracking-wide">Vasavi CMS</span>
+        </div>
+        <button 
+          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+          className="p-1 rounded-md border border-white/20 hover:bg-white/10 flex items-center justify-center"
+          aria-label="Toggle admin sidebar"
+        >
+          <span className="material-symbols-outlined text-[20px]">
+            {isSidebarOpen ? 'close' : 'menu'}
+          </span>
+        </button>
+      </div>
+
+      {/* Sidebar backdrop overlay */}
+      {isSidebarOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-all duration-300"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar navigation */}
-      <aside className="w-full md:w-64 bg-[#0A2A54] text-white flex flex-col justify-between flex-shrink-0">
+      <aside 
+        className={`fixed md:relative top-0 left-0 h-full w-64 bg-[#0A2A54] text-white flex flex-col justify-between flex-shrink-0 z-50 transform md:transform-none transition-transform duration-300 ease-in-out ${
+          isSidebarOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
+        }`}
+      >
         <div className="p-6">
           {/* Brand header */}
           <div className="flex items-center gap-3 mb-10 pb-6 border-b border-white/10 select-none">
@@ -536,7 +570,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
           {/* Nav Items */}
           <nav className="space-y-1.5 flex flex-col">
             <button 
-              onClick={() => { setActiveTab('banners'); setIsAdding(false); setEditingItem(null); }}
+              onClick={() => { setActiveTab('banners'); setIsAdding(false); setEditingItem(null); setIsSidebarOpen(false); }}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-all ${
                 activeTab === 'banners' ? 'bg-white/15 text-white shadow-inner' : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
@@ -544,7 +578,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
               <span className="material-symbols-outlined text-[20px]">view_carousel</span> Banners Management
             </button>
             <button 
-              onClick={() => { setActiveTab('clients'); setIsAdding(false); setEditingItem(null); }}
+              onClick={() => { setActiveTab('clients'); setIsAdding(false); setEditingItem(null); setIsSidebarOpen(false); }}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-all ${
                 activeTab === 'clients' ? 'bg-white/15 text-white shadow-inner' : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
@@ -552,7 +586,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
               <span className="material-symbols-outlined text-[20px]">group</span> Clients scroller
             </button>
             <button 
-              onClick={() => { setActiveTab('ceo'); setIsAdding(false); setEditingItem(null); }}
+              onClick={() => { setActiveTab('ceo'); setIsAdding(false); setEditingItem(null); setIsSidebarOpen(false); }}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-all ${
                 activeTab === 'ceo' ? 'bg-white/15 text-white shadow-inner' : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
@@ -560,7 +594,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
               <span className="material-symbols-outlined text-[20px]">person</span> CEO Profile
             </button>
             <button 
-              onClick={() => { setActiveTab('employees'); setIsAdding(false); setEditingItem(null); }}
+              onClick={() => { setActiveTab('employees'); setIsAdding(false); setEditingItem(null); setIsSidebarOpen(false); }}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-all ${
                 activeTab === 'employees' ? 'bg-white/15 text-white shadow-inner' : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
@@ -568,7 +602,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
               <span className="material-symbols-outlined text-[20px]">badge</span> Team Profile
             </button>
             <button 
-              onClick={() => { setActiveTab('products'); setIsAdding(false); setEditingItem(null); }}
+              onClick={() => { setActiveTab('products'); setIsAdding(false); setEditingItem(null); setIsSidebarOpen(false); }}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-all ${
                 activeTab === 'products' ? 'bg-white/15 text-white shadow-inner' : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
@@ -576,7 +610,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
               <span className="material-symbols-outlined text-[20px]">inventory</span> Products Catalog
             </button>
             <button 
-              onClick={() => { setActiveTab('certifications'); setIsAdding(false); setEditingItem(null); }}
+              onClick={() => { setActiveTab('certifications'); setIsAdding(false); setEditingItem(null); setIsSidebarOpen(false); }}
               className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm text-left transition-all ${
                 activeTab === 'certifications' ? 'bg-white/15 text-white shadow-inner' : 'text-white/60 hover:text-white hover:bg-white/5'
               }`}
@@ -588,13 +622,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
 
         <div className="p-6 space-y-4">
           <button 
-            onClick={onBackToHome}
+            onClick={() => { onBackToHome(); setIsSidebarOpen(false); }}
             className="w-full bg-white/5 border border-white/15 text-white/90 py-2.5 rounded-xl font-bold text-xs hover:bg-white/15 transition-all flex items-center justify-center gap-2"
           >
             <span className="material-symbols-outlined text-[16px]">visibility</span> View Live Website
           </button>
           <button 
-            onClick={handleLogout}
+            onClick={() => { handleLogout(); setIsSidebarOpen(false); }}
             className="w-full bg-red-600/80 text-white py-2.5 rounded-xl font-bold text-xs hover:bg-red-600 transition-all flex items-center justify-center gap-2"
           >
             <span className="material-symbols-outlined text-[16px]">logout</span> Sign Out

@@ -89,11 +89,11 @@ const Products: React.FC<ProductsProps> = ({ onSelectProduct, products }) => {
         </div>
 
         {/* 3-Column Products Grid */}
-        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-3 gap-gutter pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+        <div className="flex items-start md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-3 gap-gutter pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
           {items.map((product) => (
             <div 
               key={product.id} 
-              className="min-w-[85vw] md:min-w-0 snap-center shrink-0 glass-card rounded-brand p-4 group hover:shadow-xl transition-all"
+              className="w-[280px] min-w-[280px] md:w-auto md:min-w-0 snap-center shrink-0 glass-card rounded-brand p-4 group hover:shadow-xl transition-all"
             >
               {/* Product Image */}
               <div className="aspect-[4/3] rounded-brand overflow-hidden bg-surface-mist mb-4 relative border border-outline-variant/10">
@@ -106,9 +106,9 @@ const Products: React.FC<ProductsProps> = ({ onSelectProduct, products }) => {
               </div>
 
               {/* Product Info */}
-              <div className="px-4 pb-4">
-                <h3 className="font-headline-sm text-headline-sm mb-1.5 text-on-surface uppercase">{product.name}</h3>
-                <p className="text-on-surface-variant text-sm mb-3 min-h-[48px]">{product.desc}</p>
+              <div className="px-2 pb-2">
+                <h3 className="font-headline-sm text-base md:text-headline-sm mb-1.5 text-on-surface uppercase font-bold">{product.name}</h3>
+                <p className="text-on-surface-variant text-xs md:text-sm mb-3 min-h-[40px] md:min-h-[48px] leading-relaxed">{product.desc}</p>
               </div>
             </div>
           ))}

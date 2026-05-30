@@ -59,10 +59,15 @@ const About: React.FC<AboutProps> = ({ onLearnMore }) => {
                 <span className="font-label-caps text-[10px] text-secondary uppercase tracking-[0.2em]">The Vasavi Distinction</span>
               </div>
               <h2 className="font-headline-md text-2xl md:text-3xl lg:text-4xl text-on-surface leading-tight font-bold uppercase">
-                <span className="hidden md:inline">Crafting the Future of </span><span className="md:hidden">Future of </span><span className="text-secondary">Iron Castings</span>
+                Crafting the Future of <span className="text-secondary">Iron Castings</span>
               </h2>
               <p className="text-on-surface-variant text-sm leading-relaxed max-w-xl">
-                Headquartered in Karnataka's 'Steel Town' Bhadravati, we merge decades of metallurgical heritage with cutting-edge digital precision. Our commitment transcends manufacturing; we engineer trust into every molecule.
+                <span className="hidden md:inline">
+                  Headquartered in Karnataka's 'Steel Town' Bhadravati, we merge decades of metallurgical heritage with cutting-edge digital precision. Our commitment transcends manufacturing; we engineer trust into every molecule.
+                </span>
+                <span className="md:hidden">
+                  Merging decades of metallurgical heritage with cutting-edge precision in Bhadravati, we engineer trust into every casting.
+                </span>
               </p>
             </div>
 

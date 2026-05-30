@@ -44,7 +44,7 @@ const ContactPage: React.FC = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/85"></div>
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto space-y-4">
-          <h1 className="font-display-lg text-4xl md:text-5xl lg:text-6xl text-white font-bold uppercase">Get in Touch</h1>
+          <h1 className="font-display-lg text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold uppercase">Get in Touch</h1>
           <p className="font-body-lg text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl mx-auto">
             Partner with an ISO 9001:2015 certified foundry delivering precision-engineered casting solutions globally.
           </p>
@@ -64,9 +64,9 @@ const ContactPage: React.FC = () => {
               <div>
                 <p className="font-bold text-on-surface text-sm uppercase">Manufacturing Plant</p>
                 <address className="not-italic text-on-surface-variant font-body-md text-xs md:text-sm mt-1 leading-relaxed">
-                  Plot No. 12, Industrial Estate,<br/>
-                  Phase III, Hosur - 635126,<br/>
-                  Tamil Nadu, India.
+                  Industrial Estate, B-6, Lower Hutha,<br/>
+                  Bhandrahalli, Bhadravathi,<br/>
+                  Karnataka 577301, India
                 </address>
               </div>
             </div>
@@ -108,7 +108,7 @@ const ContactPage: React.FC = () => {
 
         {/* Inquiry Form */}
         <div className="lg:col-span-8">
-          <div className="glass-card bg-white p-8 md:p-12 rounded-[24px] border border-outline-variant/30 shadow-sm">
+          <div className="glass-card bg-white p-6 md:p-12 rounded-none md:rounded-[24px] border-x-0 md:border-x border-y border-outline-variant/30 shadow-none md:shadow-sm -mx-5 md:mx-0">
             <div className="mb-10">
               <h2 className="font-headline-md text-2xl font-bold uppercase text-on-surface mb-2">Technical Inquiry</h2>
               <p className="text-on-surface-variant text-xs md:text-sm">Fill out the form below for production quotes or facility visit requests.</p>

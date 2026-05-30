@@ -6,31 +6,16 @@ const Infrastructure: React.FC = () => {
       <div className="max-w-container-max mx-auto px-margin-desktop">
         
         {/* Section Header */}
-        <div className="text-center mb-10 space-y-4">
+        <div className="hidden md:block text-center mb-10 space-y-4">
           <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em]">World Class Infrastructure</span>
           <h2 className="font-headline-md text-headline-md uppercase text-on-surface">Integrated Manufacturing Facility</h2>
         </div>
 
         {/* Bento Grid layout */}
-        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-12 gap-6 min-h-[490px] pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-12 gap-6 min-h-[320px] md:min-h-0 pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
           
-          {/* Melting Unit (Wide card) */}
-          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-8 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0">
-            <img 
-              alt="Melting Unit" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-              src="https://lh3.googleusercontent.com/aida/ADBb0uiakpmhz_rEQtK7_-Dt1Q_-BZecwY3ke-2nwQu_A5OSbajs5isjrbPqYvVXerkjseS0eknLjgwb4KHlDVj5qcqs9rsmmxjYm8ksPw-U8RTpz8dYPtpXqVXHvcPT9xgQqwabTfREJHq7UX4kLp8iNdFzWtl5yuzssM8DovaJ6Ko-MKyy5AAfA0jwlIMGAB_6mK1g11arQwkKmJFbEafyoCc2brluCt-u97GYx64LibRyZVZYjXEDvVC2rkQk"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-8 flex flex-col justify-end">
-              <h3 className="text-white font-headline-sm text-headline-sm mb-2 uppercase">Melting Unit</h3>
-              <p className="text-white/80 max-w-lg text-sm leading-relaxed">
-                Induction furnace facilities with high-capacity melting for consistent metallurgical properties.
-              </p>
-            </div>
-          </div>
-
-          {/* Spectro Lab (Tall card) */}
-          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-2 rounded-brand overflow-hidden relative group bg-tertiary border border-outline-variant/10 shadow-sm shrink-0">
+          {/* Spectro Lab */}
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group bg-tertiary border border-outline-variant/10 shadow-sm shrink-0">
             <img 
               alt="Spectro Lab" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60" 

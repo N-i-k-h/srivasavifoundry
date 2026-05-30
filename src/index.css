@@ -166,3 +166,25 @@
   background: linear-gradient(to right, #e2e8f0 0%, #cbd5e1 100%);
   z-index: 0;
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Responsive margin padding overrides */
+:root {
+  --spacing-margin-desktop: 20px !important;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --spacing-margin-desktop: 80px !important;
+  }
+}

@@ -158,33 +158,58 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Backdrop Overlay */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden transition-all duration-300"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Mobile Sliding Sidebar Menu */}
       <div
-        className={`md:hidden fixed top-[72px] left-0 w-full bg-white border-t border-glass-border shadow-lg transition-all duration-300 ease-in-out z-40 ${
-          isOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-4 invisible'
+        className={`md:hidden fixed top-0 right-0 h-full w-[280px] bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out flex flex-col ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="p-6 flex flex-col gap-5">
+        {/* Sidebar Header */}
+        <div className="flex justify-between items-center p-6 border-b border-gray-100">
+          <span className="font-bold text-lg text-[#0A2A54] font-headline-md uppercase tracking-wider">Navigation</span>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-1.5 rounded-md border border-[#747878]/20 text-on-surface hover:bg-black/5"
+            aria-label="Close menu"
+          >
+            <X size={20} />
+          </button>
+        </div>
+
+        {/* Sidebar Links */}
+        <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-4">
           {navItems.map((item) => (
             <a
               key={item.id}
               href={`#${item.id}`}
               onClick={(e) => handleNavClick(e, item.id)}
-              className={`py-2 text-sm font-medium border-b border-gray-100 ${
+              className={`py-3 px-4 rounded-xl text-sm font-semibold transition-all ${
                 activeSection === item.id 
-                  ? 'text-secondary font-bold border-b-2 border-secondary' 
-                  : 'text-on-surface hover:text-secondary'
+                  ? 'bg-secondary/10 text-secondary' 
+                  : 'text-on-surface hover:bg-black/5'
               }`}
             >
               {item.label}
             </a>
           ))}
+        </div>
+
+        {/* Sidebar Footer */}
+        <div className="p-6 border-t border-gray-100">
           <button
             onClick={() => {
               setIsOpen(false);
               onRequestQuote();
             }}
-            className="w-full mt-3 bg-tertiary text-white py-3 rounded-brand font-bold shadow-sm"
+            className="w-full bg-tertiary text-white py-3.5 rounded-brand font-bold shadow-md active:scale-95 transition-all text-xs uppercase tracking-wider"
           >
             Request Quote
           </button>
