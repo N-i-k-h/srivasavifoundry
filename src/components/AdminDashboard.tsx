@@ -649,7 +649,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ onBackToHome, onRefresh
                 // Clear forms
                 if (activeTab === 'banners') setBannerForm({ mainText: '', secondaryText: '', imageUrl: '' });
                 else if (activeTab === 'clients') setClientForm({ company: '', quote: '', logoUrl: '' });
-                else if (activeTab === 'employees') setEmployeeForm({ name: '', role: '', imageUrl: '' });
+                else if (activeTab === 'employees') setEmployeeForm({ name: '', role: '', phone: '', imageUrl: '' });
                 else if (activeTab === 'certifications') setCertForm({ title: '', imageUrl: '' });
                 else if (activeTab === 'products') setProductForm({
                   name: '', category: 'Wear Plates', desc: '', alloy: '', weightRange: '', hardness: '', application: '', imageUrl: '', specs: [{ label: '', value: '' }]
