@@ -44,7 +44,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-bold text-on-surface text-base">Our Foundry</h4>
-                <p className="text-sm text-steel-gray leading-relaxed">Plot No. 12/B, KIADB Industrial Area, Machenahalli, Bhadravati, Karnataka - 577 301</p>
+                <p className="text-sm text-steel-gray leading-relaxed">Industrial Estate, B-6, Lower Hutha, Bhandrahalli, Bhadravathi, Karnataka 577301, India</p>
               </div>
             </div>
 
