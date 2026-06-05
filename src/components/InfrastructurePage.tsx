@@ -59,7 +59,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             
             {/* Melting Unit */}
-            <div className="md:col-span-7 lg:col-span-8 glass-card rounded-[24px] overflow-hidden group relative min-h-[350px] md:h-[450px]">
+            <div className="md:col-span-7 lg:col-span-8 glass-card rounded-[24px] overflow-hidden group relative min-h-[350px] md:h-[450px] reveal-left">
               <div className="absolute inset-0 bg-black/40 z-10 transition-colors group-hover:bg-black/30"></div>
               <img 
                 alt="Melting Unit Facility" 
@@ -81,7 +81,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
             </div>
 
             {/* Spectro Lab */}
-            <div className="md:col-span-5 lg:col-span-4 glass-card rounded-[24px] overflow-hidden group relative min-h-[350px] md:h-[450px]">
+            <div className="md:col-span-5 lg:col-span-4 glass-card rounded-[24px] overflow-hidden group relative min-h-[350px] md:h-[450px] reveal-right">
               <div className="absolute inset-0 bg-black/40 z-10 transition-colors group-hover:bg-black/30"></div>
               <img 
                 alt="Quality Testing Lab" 
@@ -103,7 +103,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
             </div>
 
             {/* Moulding Area */}
-            <div className="md:col-span-12 glass-card rounded-[24px] overflow-hidden group relative h-[300px] md:h-[350px]">
+            <div className="md:col-span-12 glass-card rounded-[24px] overflow-hidden group relative h-[300px] md:h-[350px] reveal">
               <div className="absolute inset-0 bg-black/40 z-10 transition-colors group-hover:bg-black/30"></div>
               <img 
                 alt="Moulding and Casting Production" 
@@ -135,7 +135,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-secondary to-transparent opacity-20"></div>
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="reveal-left">
               <h2 className="font-headline-md text-2xl md:text-3xl font-bold uppercase mb-8">Capacity & Technical Specification</h2>
               <div className="space-y-8">
                 <div className="flex items-start gap-4 group">
@@ -168,7 +168,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
               </div>
             </div>
             
-            <div className="relative flex justify-center">
+            <div className="relative flex justify-center reveal-right">
               <div className="glass-card bg-white/5 border-white/10 p-10 md:p-12 rounded-[32px] w-full max-w-sm text-center relative z-10 overflow-hidden">
                 <div className="absolute -top-12 -right-12 w-64 h-64 bg-secondary/15 rounded-full blur-[80px]"></div>
                 <div className="space-y-4">
@@ -187,7 +187,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
       <section className="py-14 bg-surface-mist">
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="glass-card bg-white p-8 md:p-14 rounded-[32px] flex flex-col md:flex-row items-center gap-12 border border-outline-variant/30">
-            <div className="w-40 h-40 md:w-48 md:h-48 shrink-0 bg-white rounded-full shadow-lg flex items-center justify-center p-6 border border-outline-variant/20">
+            <div className="w-40 h-40 md:w-48 md:h-48 shrink-0 bg-white rounded-full shadow-lg flex items-center justify-center p-6 border border-outline-variant/20 reveal-left">
               <div className="text-center">
                 <span className="block text-3xl font-bold text-on-surface mb-0.5">ISO</span>
                 <span className="block text-lg font-bold text-secondary">9001:2015</span>
@@ -195,7 +195,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">Quality Certified</span>
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 reveal-right">
               <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase mb-4">Commitment to Flawless Outcomes</h2>
               <p className="text-sm text-on-surface-variant mb-6 leading-relaxed">
                 Our certification for manufacturing and supplying High-Chrome, Gray Iron, and SG Iron castings is maintained by competent personnel. Every step—from raw material to final fettling—is monitored to ensure absolute quality compliance.
@@ -226,12 +226,12 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
       {/* Engineering Expertise */}
       <section className="py-14 bg-white">
         <div className="max-w-container-max mx-auto px-margin-desktop text-center">
-          <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase mb-4">Engineering Expertise</h2>
-          <p className="text-on-surface-variant text-sm max-w-2xl mx-auto mb-12 leading-relaxed">
+          <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase mb-4 reveal">Engineering Expertise</h2>
+          <p className="text-on-surface-variant text-sm max-w-2xl mx-auto mb-12 leading-relaxed reveal delay-100">
             Our infrastructure is powered by a dedicated team of professionals with over 25 years of specialized experience in the metallurgy of "High Quality High Chrome Castings".
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            <div className="glass-card bg-surface-mist p-8 rounded-[24px] flex flex-col items-center group border border-outline-variant/10">
+            <div className="glass-card bg-surface-mist p-8 rounded-[24px] flex flex-col items-center group border border-outline-variant/10 reveal delay-100">
               <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-105">
                 <span className="material-symbols-outlined text-secondary text-3xl">groups</span>
               </div>
@@ -239,7 +239,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
               <p className="text-on-surface-variant text-xs leading-relaxed">Led by professionals who understand that success lies in providing valuable solutions that exceed expectations.</p>
             </div>
             
-            <div className="glass-card bg-surface-mist p-8 rounded-[24px] flex flex-col items-center group border border-outline-variant/10">
+            <div className="glass-card bg-surface-mist p-8 rounded-[24px] flex flex-col items-center group border border-outline-variant/10 reveal delay-250">
               <div className="w-16 h-16 bg-molten-orange/10 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-105">
                 <span className="material-symbols-outlined text-molten-orange text-3xl">engineering</span>
               </div>
@@ -247,7 +247,7 @@ const InfrastructurePage: React.FC<InfrastructurePageProps> = ({ onRequestQuote,
               <p className="text-on-surface-variant text-xs leading-relaxed">Exceptional ability to develop new, complex items tailored to specific customer requirements and drawings.</p>
             </div>
             
-            <div className="glass-card bg-surface-mist p-8 rounded-[24px] flex flex-col items-center group border border-outline-variant/10">
+            <div className="glass-card bg-surface-mist p-8 rounded-[24px] flex flex-col items-center group border border-outline-variant/10 reveal delay-400">
               <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-105">
                 <span className="material-symbols-outlined text-secondary text-3xl">handshake</span>
               </div>

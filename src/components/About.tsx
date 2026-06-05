@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutImg from '../assets/melting_stage.jpg';
 
 interface AboutProps {
   onLearnMore: () => void;
@@ -34,18 +35,18 @@ const About: React.FC<AboutProps> = ({ onLearnMore }) => {
         <div className="flex flex-col lg:flex-row items-center gap-10">
           
           {/* Left: High Impact Visual */}
-          <div className="w-full lg:w-1/2 relative">
+          <div className="w-full lg:w-1/2 relative reveal-left">
             <div className="relative rounded-brand overflow-hidden shadow-2xl h-[260px] lg:h-[320px] group border border-outline-variant/10">
               <img 
                 alt="Precision Engineering at Sri Vasavi Foundry" 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-                src="https://lh3.googleusercontent.com/aida/ADBb0uiQoYiyrsrCLols4lN01qJUvn2kdooh3LKLBmjAb3LzCbvwytY2A-VLpzFilzbqdlIj4MPR_78naDoeWVgJky_Mj3EGu50FB1lqyLurchFmIkpGtRG7daqYtJZ8IN_UK9y8xcUNO18DOxjxswoONAKTfSLAjm-JdlUeVL14018_zx16sd9fV16-BysUCExt7hMjkd15lU9_TFsp79u4Jr0YSUigeOFm6s-JdEEizfuXSIqyabZjq-TKn8I"
+                src={aboutImg}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-on-secondary-fixed/40 to-transparent"></div>
             </div>
             
             {/* Floating Stats Card */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-brand shadow-2xl border border-outline-variant hidden xl:block max-w-[240px] backdrop-blur-xl bg-white/90">
+            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-brand shadow-2xl border border-outline-variant hidden xl:block max-w-[240px] backdrop-blur-xl bg-white/90 reveal delay-200">
               <div className="text-secondary text-headline-sm font-bold mb-1 italic">ISO 9001:2015</div>
               <p className="text-on-surface-variant text-[11px] font-medium leading-normal">Certified Quality Management Systems since inception.</p>
             </div>
@@ -53,7 +54,7 @@ const About: React.FC<AboutProps> = ({ onLearnMore }) => {
 
           {/* Right: Content & Features */}
           <div className="w-full lg:w-1/2 space-y-6">
-            <div className="space-y-3">
+            <div className="space-y-3 reveal-right">
               <div className="inline-flex items-center gap-3 px-4 py-0.5 border border-secondary/20 rounded-full">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
                 <span className="font-label-caps text-[10px] text-secondary uppercase tracking-[0.2em]">The Vasavi Distinction</span>
@@ -74,7 +75,7 @@ const About: React.FC<AboutProps> = ({ onLearnMore }) => {
             {/* Feature Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
               {features.map((feat, idx) => (
-                <div key={idx} className="space-y-1.5 group cursor-default">
+                <div key={idx} className={`space-y-1.5 group cursor-default reveal delay-${(idx + 1) * 100}`}>
                   <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
                     <span className="material-symbols-outlined text-[20px]">{feat.icon}</span>
                   </div>
@@ -85,7 +86,7 @@ const About: React.FC<AboutProps> = ({ onLearnMore }) => {
             </div>
 
             {/* CTA Link button */}
-            <div className="pt-2">
+            <div className="pt-2 reveal delay-500">
               <button 
                 onClick={onLearnMore}
                 className="group bg-on-surface text-white px-8 py-3.5 rounded-brand font-bold inline-flex items-center gap-3 hover:bg-secondary transition-all shadow-lg active:scale-95 cursor-pointer text-xs uppercase tracking-wider"

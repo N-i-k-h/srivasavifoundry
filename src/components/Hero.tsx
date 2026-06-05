@@ -55,10 +55,12 @@ const Hero: React.FC<{ banners?: any[] }> = ({ banners }) => {
       <div className="absolute inset-0 bg-black/25 z-10"></div>
       
       {/* Background Graphic Blueprint overlay */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none z-15">
-        <div className="w-[600px] h-[600px] border-[1px] border-white/20 relative">
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/20"></div>
-          <div className="absolute left-1/2 top-0 w-[1px] h-full bg-white/20"></div>
+      <div className="absolute inset-0 flex items-center justify-center opacity-15 pointer-events-none z-15 animate-[spin_120s_linear_infinite]">
+        <div className="w-[600px] h-[600px] border-[1.5px] border-dashed border-white/20 rounded-full relative">
+          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/25"></div>
+          <div className="absolute left-1/2 top-0 w-[1px] h-full bg-white/25"></div>
+          <div className="absolute inset-16 border border-white/10 rounded-full"></div>
+          <div className="absolute inset-32 border border-white/5 rounded-full"></div>
         </div>
       </div>
 
@@ -108,7 +110,7 @@ const Hero: React.FC<{ banners?: any[] }> = ({ banners }) => {
               key={idx}
               onClick={() => setCurrentSlide(idx)}
               className={`transition-all duration-300 rounded-full cursor-pointer ${
-                idx === currentSlide ? 'w-8 h-1.5 bg-secondary' : 'w-1.5 h-1.5 bg-white/30 hover:bg-white/50'
+                idx === currentSlide ? 'w-8 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/30 hover:bg-white/50'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />

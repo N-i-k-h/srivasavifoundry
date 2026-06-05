@@ -75,7 +75,7 @@ const Products: React.FC<ProductsProps> = ({ onSelectProduct, products }) => {
       <div className="max-w-container-max mx-auto px-margin-desktop">
         
         {/* Header Grid */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6 reveal">
           <div className="space-y-4">
             <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em]">Product Showcase</span>
             <h2 className="font-headline-md text-headline-md uppercase text-on-surface">Specialized Industrial Components</h2>
@@ -90,10 +90,10 @@ const Products: React.FC<ProductsProps> = ({ onSelectProduct, products }) => {
 
         {/* 3-Column Products Grid */}
         <div className="flex items-start md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-3 gap-gutter pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
-          {items.map((product) => (
+          {items.map((product, idx) => (
             <div 
               key={product.id} 
-              className="w-[280px] min-w-[280px] md:w-auto md:min-w-0 snap-center shrink-0 glass-card rounded-brand p-4 group hover:shadow-xl transition-all"
+              className={`w-[280px] min-w-[280px] md:w-auto md:min-w-0 snap-center shrink-0 interactive-card rounded-brand p-4 group hover:shadow-xl transition-all reveal delay-${(idx + 1) * 150}`}
             >
               {/* Product Image */}
               <div className="aspect-[4/3] rounded-brand overflow-hidden bg-surface-mist mb-4 relative border border-outline-variant/10">

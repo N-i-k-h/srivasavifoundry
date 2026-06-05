@@ -90,14 +90,14 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
       {/* Section 2: Heritage Grid */}
       <section className="hidden md:block py-14 px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-          <div className="md:col-span-5 space-y-6">
+          <div className="md:col-span-5 space-y-6 reveal-left">
             <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase leading-tight">25 Years of <br/>Undefeated Success</h2>
             <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
               Located in Bhadravathi, the historic 'Steel Town', we carry forward a legacy of industrial precision from a modest beginning to a 400-ton per annum capacity.
             </p>
           </div>
           
-          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 reveal-right">
             <div className="bg-surface-container p-8 rounded-[24px] space-y-3">
               <span className="text-secondary font-display-lg text-4xl font-bold block">25+</span>
               <p className="font-label-caps text-[10px] text-on-surface-variant uppercase font-bold leading-relaxed">Years of expertise in High-Chrome castings</p>
@@ -120,13 +120,13 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
         <div className="px-margin-desktop max-w-container-max mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            <div className="lg:col-span-5 relative aspect-[4/5] max-w-md w-full mx-auto">
+            <div className="lg:col-span-5 relative aspect-[4/5] max-w-md w-full mx-auto reveal-left">
               <div className="absolute inset-0 border-2 border-molten-orange/30 translate-x-4 translate-y-4 rounded-3xl"></div>
               <div className="relative h-full w-full rounded-3xl overflow-hidden shadow-2xl bg-[#1c1b1b]">
                 <img 
                   alt="Suresh M, CEO" 
                   className="w-full h-full object-cover filter brightness-90 grayscale hover:grayscale-0 transition-all duration-1000" 
-                  src={ceo?.imageUrl || "https://lh3.googleusercontent.com/aida-public/AB6AXuD_oLDTH9kK5pZm9gil780JuQSDRlVS8SNgyUAuJ_v4kdesPjLBO-VdQxpta6tLDXtzUj2iZmeJYfmfzOq7c_B0YdzOI5eL5z5e3VHbsBe1v9X9PPLqYlZIal5Y4RGif_IIqv0l236gatx8pR7nrepWYxLc2obDeygf0233BRKFImQdrllSflmOm274ZdPsPhQtRyiMa9a-Dtxu3UDd-9QuD8FqOMtzKognmgbmctbK3R3RF4Y2ET-R2vgSNNmCVHolgMOEYBzVyxxC"}
+                  src={ceo?.imageUrl || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"}
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent">
                   <h4 className="text-white font-headline-sm text-lg font-bold uppercase mb-1">Suresh M</h4>
@@ -135,7 +135,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
               </div>
             </div>
             
-            <div className="lg:col-span-7 space-y-8">
+            <div className="lg:col-span-7 space-y-8 reveal-right">
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-0.5 bg-molten-orange"></div>
@@ -165,10 +165,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
         </div>
       </section>
 
-      {/* Section: Our Employees (NEW - Directly after CEO says) */}
+      {/* Section: Our Professionals (NEW - Directly after CEO says) */}
       <section className="py-14 bg-surface-mist">
         <div className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4 reveal">
             <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] block">Our Professionals</span>
             <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase">Our Engineering & Leadership Team</h2>
             <div className="w-24 h-1 bg-molten-orange mx-auto"></div>
@@ -177,7 +177,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {displayEmployees.map((emp, idx) => (
-              <div key={idx} className="bg-white rounded-[24px] overflow-hidden border border-outline-variant/30 shadow-sm flex flex-col group hover:shadow-lg transition-all duration-300">
+              <div key={idx} className={`bg-white rounded-[24px] overflow-hidden border border-outline-variant/30 shadow-sm flex flex-col group hover:shadow-lg transition-all duration-300 reveal delay-${(idx + 1) * 150}`}>
                 <div className="aspect-square relative overflow-hidden bg-gray-100">
                   <img 
                     alt={emp.name} 
@@ -212,7 +212,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
       {/* Section 4: Capabilities (Bento) */}
       <section className="py-14 bg-white">
         <div className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 reveal">
             <div className="max-w-2xl space-y-2">
               <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] block">Our Strengths</span>
               <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase">Why Industry Leaders Choose Vasavi Foundry</h2>
@@ -223,7 +223,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Quality */}
-            <div className="glass-card bg-surface-mist p-8 space-y-6 group hover:bg-white border border-outline-variant/10">
+            <div className="glass-card bg-surface-mist p-8 space-y-6 group hover:bg-white border border-outline-variant/10 reveal delay-100">
               <div className="w-16 h-16 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                 <span className="material-symbols-outlined text-[32px]">verified</span>
               </div>
@@ -234,7 +234,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
             </div>
             
             {/* Innovation */}
-            <div className="glass-card bg-surface-mist p-8 space-y-6 group hover:bg-white border border-outline-variant/10">
+            <div className="glass-card bg-surface-mist p-8 space-y-6 group hover:bg-white border border-outline-variant/10 reveal delay-250">
               <div className="w-16 h-16 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                 <span className="material-symbols-outlined text-[32px]">biotech</span>
               </div>
@@ -245,7 +245,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
             </div>
             
             {/* Scale */}
-            <div className="glass-card bg-surface-mist p-8 space-y-6 group hover:bg-white border border-outline-variant/10">
+            <div className="glass-card bg-surface-mist p-8 space-y-6 group hover:bg-white border border-outline-variant/10 reveal delay-400">
               <div className="w-16 h-16 rounded-2xl bg-secondary/5 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all duration-500">
                 <span className="material-symbols-outlined text-[32px]">precision_manufacturing</span>
               </div>
@@ -262,7 +262,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
       <section className="py-14 bg-surface-container">
         <div className="px-0 md:px-margin-desktop max-w-container-max mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 rounded-none md:rounded-[32px] overflow-hidden shadow-none md:shadow-xl border-y md:border border-outline-variant/20 bg-white">
-            <div className="p-8 md:p-14 flex flex-col justify-center space-y-8">
+            <div className="p-8 md:p-14 flex flex-col justify-center space-y-8 reveal-left">
               <div className="space-y-3">
                 <span className="text-secondary font-label-caps text-xs uppercase tracking-widest font-bold">Innovation at Scale</span>
                 <h2 className="font-headline-md text-xl md:text-2xl font-bold uppercase text-on-surface">State-of-the-art Infrastructure</h2>
@@ -283,7 +283,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onRequestQuote, onNavigateHome, c
               </div>
             </div>
             
-            <div className="relative min-h-[350px] lg:min-h-[400px]">
+            <div className="relative min-h-[350px] lg:min-h-[400px] reveal-right">
               <img 
                 alt="Factory Fettling Process" 
                 className="absolute inset-0 w-full h-full object-cover" 

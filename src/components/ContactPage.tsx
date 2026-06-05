@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import contactBg from '../assets/hero_foundry.jpg';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ const ContactPage: React.FC = () => {
         <img 
           alt="Contact Banner" 
           className="absolute inset-0 w-full h-full object-cover" 
-          src="https://lh3.googleusercontent.com/aida/ADBb0ug98Bf7PYHNvaAosjcHmzkyHDqwo4NMN7sE2KhmxlourmYkDHKEeQf_cndyRlMMmBA32ok-Hy2MeJbl5o1uryDN_92kgwm0I0x0_VehL_NSfLufV_wtL0_mueoMsfUF3ELkdoc7YCVZ6HBja4EJM0fYT77FqVTo3dzyTwduy3GfDE2kFrHhItb7xA9zu12v4l23QRCdZHOIkCl924_V0GOYe6u93-dtOY6wkkBbchFcFJ_TfjMzU42a0Yo5"
+          src={contactBg}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/85"></div>
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto space-y-4">
@@ -54,7 +55,7 @@ const ContactPage: React.FC = () => {
       {/* Main Content Area */}
       <section className="max-w-container-max mx-auto px-margin-desktop py-14 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
         {/* Contact Sidebar */}
-        <div className="lg:col-span-4 space-y-10">
+        <div className="lg:col-span-4 space-y-10 reveal-left">
           <div className="space-y-6">
             <h2 className="font-headline-md text-2xl font-bold uppercase text-secondary">Global HQ</h2>
             
@@ -107,7 +108,7 @@ const ContactPage: React.FC = () => {
         </div>
 
         {/* Inquiry Form */}
-        <div className="lg:col-span-8">
+        <div className="lg:col-span-8 reveal-right">
           <div className="glass-card bg-white p-6 md:p-12 rounded-none md:rounded-[24px] border-x-0 md:border-x border-y border-outline-variant/30 shadow-none md:shadow-sm -mx-5 md:mx-0">
             <div className="mb-10">
               <h2 className="font-headline-md text-2xl font-bold uppercase text-on-surface mb-2">Technical Inquiry</h2>
@@ -232,7 +233,7 @@ const ContactPage: React.FC = () => {
       {/* Why Partner Section */}
       <section className="bg-surface-container-low py-14">
         <div className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-8">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-8 reveal">
             <div className="md:max-w-xl space-y-2">
               <span className="text-molten-orange font-label-caps text-xs tracking-widest uppercase block font-bold">Unmatched Precision</span>
               <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase">Engineered for Global Standards</h2>
@@ -244,7 +245,7 @@ const ContactPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="glass-card bg-white p-8 rounded-[24px] border border-outline-variant/20 hover:border-secondary/20 shadow-sm flex flex-col group transition-all duration-350 hover:shadow-md">
+            <div className="glass-card bg-white p-8 rounded-[24px] border border-outline-variant/20 hover:border-secondary/20 shadow-sm flex flex-col group transition-all duration-350 hover:shadow-md reveal delay-100">
               <div className="w-12 h-12 bg-secondary/5 rounded-xl flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
                 <span className="material-symbols-outlined text-[24px]">verified</span>
               </div>
@@ -253,7 +254,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Card 2 */}
-            <div className="glass-card bg-white p-8 rounded-[24px] border border-outline-variant/20 hover:border-secondary/20 shadow-sm flex flex-col group transition-all duration-350 hover:shadow-md">
+            <div className="glass-card bg-white p-8 rounded-[24px] border border-outline-variant/20 hover:border-secondary/20 shadow-sm flex flex-col group transition-all duration-350 hover:shadow-md reveal delay-250">
               <div className="w-12 h-12 bg-secondary/5 rounded-xl flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
                 <span className="material-symbols-outlined text-[24px]">precision_manufacturing</span>
               </div>
@@ -262,7 +263,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="glass-card bg-white p-8 rounded-[24px] border border-outline-variant/20 hover:border-secondary/20 shadow-sm flex flex-col group transition-all duration-350 hover:shadow-md">
+            <div className="glass-card bg-white p-8 rounded-[24px] border border-outline-variant/20 hover:border-secondary/20 shadow-sm flex flex-col group transition-all duration-350 hover:shadow-md reveal delay-400">
               <div className="w-12 h-12 bg-secondary/5 rounded-xl flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
                 <span className="material-symbols-outlined text-[24px]">public</span>
               </div>

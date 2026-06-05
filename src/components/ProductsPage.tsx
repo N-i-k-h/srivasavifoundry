@@ -574,7 +574,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
 
       {/* Section 2: Filterable Product Grid */}
       <section id="portfolio-grid" className="py-14 px-margin-desktop max-w-container-max mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6 reveal">
           <div className="space-y-2">
             <h2 className="font-headline-md text-2xl md:text-3xl text-inverse-surface font-bold uppercase">Product Portfolio</h2>
             <p className="font-body-md text-on-surface-variant text-sm max-w-xl">
@@ -602,11 +602,11 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
 
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {filteredProducts.map((product) => (
+          {filteredProducts.map((product, idx) => (
             <div 
               key={product.id}
               onClick={() => onRequestQuote(product.name)}
-              className="bg-white rounded-[24px] border border-outline-variant/30 overflow-hidden product-hover transition-all duration-500 flex flex-col group shadow-sm cursor-pointer"
+              className={`bg-white rounded-[24px] border border-outline-variant/30 overflow-hidden product-hover transition-all duration-500 flex flex-col group shadow-sm cursor-pointer reveal delay-${(idx % 3) * 150}`}
             >
               {/* Product Image Wrapper - Solid White Background */}
               <div className="overflow-hidden aspect-[4/3] relative bg-white border-b border-outline-variant/10 flex items-center justify-center p-6">
@@ -641,7 +641,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
         <div className="max-w-container-max mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
-            <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="lg:col-span-7 flex flex-col justify-center reveal-left">
               <h2 className="font-display-lg text-2xl md:text-3xl mb-4 font-bold uppercase text-on-surface">Custom Alloy Casting Solutions</h2>
               <p className="font-body-lg text-sm md:text-base text-on-surface-variant mb-8 leading-relaxed max-w-xl">
                 With over 25 years of metallurgical expertise, we specialize in developing bespoke alloy formulations tailored to your specific wear patterns and operational stressors.
@@ -670,7 +670,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
               </div>
             </div>
             
-            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
+            <div className="lg:col-span-5 grid grid-cols-2 gap-4 reveal-right">
               <div className="bg-white p-6 rounded-[24px] shadow-sm flex flex-col items-center justify-center text-center border border-outline-variant/10">
                 <span className="font-display-lg text-2xl md:text-3xl text-secondary block mb-1 font-bold">25+</span>
                 <span className="font-label-caps text-[10px] text-steel-gray uppercase tracking-wider font-bold">Years Exp</span>
@@ -696,10 +696,10 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
 
       {/* Section 4: Quality Assurance */}
       <section className="py-14 px-margin-desktop max-w-container-max mx-auto text-center">
-        <h2 className="font-display-lg text-2xl md:text-3xl mb-12 font-bold uppercase text-on-surface">Institutional Quality Assurance</h2>
+        <h2 className="font-display-lg text-2xl md:text-3xl mb-12 font-bold uppercase text-on-surface reveal">Institutional Quality Assurance</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-          <div className="space-y-4">
+          <div className="space-y-4 reveal delay-100">
             <div className="mx-auto w-16 h-16 bg-surface-mist rounded-[20px] flex items-center justify-center border border-outline-variant/30 text-secondary">
               <span className="material-symbols-outlined text-2xl">magnification_small</span>
             </div>
@@ -711,7 +711,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 reveal delay-200">
             <div className="mx-auto w-16 h-16 bg-surface-mist rounded-[20px] flex items-center justify-center border border-outline-variant/30 text-secondary">
               <span className="material-symbols-outlined text-2xl">hardware</span>
             </div>
@@ -723,7 +723,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 reveal delay-300">
             <div className="mx-auto w-16 h-16 bg-surface-mist rounded-[20px] flex items-center justify-center border border-outline-variant/30 text-secondary">
               <span className="material-symbols-outlined text-2xl">architecture</span>
             </div>
@@ -735,7 +735,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 reveal delay-400">
             <div className="mx-auto w-16 h-16 bg-surface-mist rounded-[20px] flex items-center justify-center border border-outline-variant/30 text-secondary">
               <span className="material-symbols-outlined text-2xl">humidity_mid</span>
             </div>
@@ -751,7 +751,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ onRequestQuote, onNavigateH
 
       {/* Section 5: Request Quote CTA */}
       <section className="px-margin-desktop pb-14">
-        <div className="max-w-container-max mx-auto bg-inverse-surface rounded-[32px] p-10 md:p-16 relative overflow-hidden text-center shadow-2xl border border-white/5">
+        <div className="max-w-container-max mx-auto bg-inverse-surface rounded-[32px] p-10 md:p-16 relative overflow-hidden text-center shadow-2xl border border-white/5 reveal">
           <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] -mr-48 -mt-48"></div>
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#FF5E14]/5 rounded-full blur-[100px] -ml-48 -mb-48"></div>
           

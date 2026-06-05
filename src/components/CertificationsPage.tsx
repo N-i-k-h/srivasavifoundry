@@ -156,7 +156,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
       {/* Official Certificates Grid */}
       <section className="py-14 bg-white border-t border-outline-variant/30">
         <div className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-4 reveal">
             <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] block">Credentials</span>
             <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase">Official Certificates & Registrations</h2>
             <div className="w-24 h-1 bg-molten-orange mx-auto"></div>
@@ -167,7 +167,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
             {displayCertificates.map((cert, idx) => (
               <div 
                 key={cert.id} 
-                className="bg-surface-container-low rounded-[24px] overflow-hidden border border-outline-variant/30 hover:border-secondary/40 shadow-sm flex flex-col group hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className={`bg-surface-container-low rounded-[24px] overflow-hidden border border-outline-variant/30 hover:border-secondary/40 shadow-sm flex flex-col group hover:shadow-lg transition-all duration-300 cursor-pointer reveal delay-${(idx % 3) * 150}`}
                 onClick={() => handleOpenLightbox(idx)}
               >
                 <div className="aspect-[3/4] relative overflow-hidden bg-white p-4 border-b border-outline-variant/20 flex items-center justify-center">
@@ -190,7 +190,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
                   </div>
                   <div className="mt-6 pt-4 border-t border-outline-variant/10 flex flex-col gap-1 text-[11px] text-gray-500 font-medium">
                     <div className="flex justify-between">
-                      <span className="text-secondary font-bold">No:</span>
+                       <span className="text-secondary font-bold">No:</span>
                       <span className="text-on-surface font-semibold">{cert.docNumber}</span>
                     </div>
                     <div className="flex justify-between">
@@ -209,7 +209,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
       <section className="py-14 bg-surface-mist relative">
         <div className="max-w-container-max mx-auto px-margin-desktop">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
+            <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6 reveal-left">
               <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase leading-tight">ISO 9001:2015 <br/>Validation Metrics</h2>
               <div className="w-24 h-1 bg-molten-orange"></div>
               <p className="text-sm text-on-surface-variant leading-relaxed">
@@ -226,7 +226,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
                 </div>
               </div>
             </div>
-            <div className="lg:col-span-8">
+            <div className="lg:col-span-8 reveal-right">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Quality Cards */}
                 <div className="bg-white p-8 rounded-[24px] border border-outline-variant/30 shadow-sm hover:shadow-md transition-all group">
@@ -270,14 +270,14 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
       {/* Quality Focus Operations */}
       <section className="py-14 bg-white border-t border-outline-variant/20">
         <div className="max-w-container-max mx-auto px-margin-desktop">
-          <div className="text-center mb-12 space-y-4">
+          <div className="text-center mb-12 space-y-4 reveal">
             <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em] block">Operational Integrity</span>
             <h2 className="font-headline-md text-2xl md:text-3xl text-on-surface font-bold uppercase">Quality Focus Operations</h2>
             <div className="w-24 h-1 bg-molten-orange mx-auto"></div>
             <p className="text-on-surface-variant text-sm max-w-xl mx-auto">Transparency in our manufacturing process ensures that our clients receive components that power industries with reliability.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="relative group rounded-[24px] overflow-hidden shadow-lg aspect-[1.6]">
+            <div className="relative group rounded-[24px] overflow-hidden shadow-lg aspect-[1.6] reveal-left">
               <img 
                 alt="Detailed component inspection" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -288,7 +288,7 @@ const CertificationsPage: React.FC<CertificationsPageProps> = ({ onRequestQuote,
                 <p className="text-gray-300 text-xs max-w-md leading-relaxed">Every batch undergoes 100% visual and dimensional inspection before dispatch to ensure zero defects.</p>
               </div>
             </div>
-            <div className="relative group rounded-[24px] overflow-hidden shadow-lg aspect-[1.6]">
+            <div className="relative group rounded-[24px] overflow-hidden shadow-lg aspect-[1.6] reveal-right">
               <img 
                 alt="Technical laboratory setup" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 

@@ -16,6 +16,7 @@ import AboutPage from './components/AboutPage';
 import CertificationsPage from './components/CertificationsPage';
 import ContactPage from './components/ContactPage';
 import AdminDashboard from './components/AdminDashboard';
+import AnimatedCounter from './components/AnimatedCounter';
 
 const API_BASE = window.location.origin.includes('localhost') 
   ? 'http://localhost:7010/api' 
@@ -75,7 +76,63 @@ function App() {
     fetchCMSData();
   }, []);
 
+  // Scroll reveal animation handler using Intersection Observer
+  useEffect(() => {
+    // We add a tiny delay to ensure all dynamically generated DOM nodes are fully rendered
+    const timer = setTimeout(() => {
+      const revealElements = document.querySelectorAll('.reveal, .reveal-fade, .reveal-left, .reveal-right');
+      
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -8% 0px', // Trigger when element is slightly inside viewport
+        threshold: 0.02
+      };
 
+      const observerCallback = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Unobserve after animating to keep it clean and smooth
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      revealElements.forEach((el) => observer.observe(el));
+    }, 150);
+
+    return () => clearTimeout(timer);
+  }, [currentPage, banners, clients, products, certifications, ceo, employees]);
+
+  // Card mouse hover spotlight reflection effect
+  useEffect(() => {
+    // Add small delay to ensure elements are compiled in the DOM
+    const timer = setTimeout(() => {
+      const cards = document.querySelectorAll('.interactive-card');
+      
+      const handleMouseMove = (e: MouseEvent) => {
+        const card = e.currentTarget as HTMLElement;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      };
+
+      cards.forEach((card) => {
+        card.addEventListener('mousemove', handleMouseMove as any);
+      });
+
+      return () => {
+        cards.forEach((card) => {
+          card.removeEventListener('mousemove', handleMouseMove as any);
+        });
+      };
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, [currentPage, banners, clients, products, certifications, ceo, employees]);
 
   // Trigger empty/general RFQ
   const handleRequestGeneralQuote = (productName?: string) => {
@@ -218,20 +275,28 @@ function App() {
           {/* Stats Section */}
           <section className="hidden md:block py-[48px] bg-surface">
             <div className="max-w-container-max mx-auto px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-gutter">
-              <div className="text-center p-8 glass-card rounded-brand active-glow transition-all">
-                <div className="font-display-lg text-headline-md text-secondary mb-2">25+</div>
+              <div className="text-center p-8 interactive-card rounded-brand active-glow transition-all reveal delay-100">
+                <div className="font-display-lg text-headline-md text-secondary mb-2">
+                  <AnimatedCounter end={25} suffix="+" />
+                </div>
                 <div className="font-label-caps text-label-caps uppercase text-steel-gray">Years Success</div>
               </div>
-              <div className="text-center p-8 glass-card rounded-brand active-glow transition-all">
-                <div className="font-display-lg text-headline-md text-secondary mb-2">500+</div>
+              <div className="text-center p-8 interactive-card rounded-brand active-glow transition-all reveal delay-200">
+                <div className="font-display-lg text-headline-md text-secondary mb-2">
+                  <AnimatedCounter end={500} suffix="+" />
+                </div>
                 <div className="font-label-caps text-label-caps uppercase text-steel-gray">Industrial Clients</div>
               </div>
-              <div className="text-center p-8 glass-card rounded-brand active-glow transition-all">
-                <div className="font-display-lg text-headline-md text-secondary mb-2">400+</div>
+              <div className="text-center p-8 interactive-card rounded-brand active-glow transition-all reveal delay-300">
+                <div className="font-display-lg text-headline-md text-secondary mb-2">
+                  <AnimatedCounter end={400} suffix="+" />
+                </div>
                 <div className="font-label-caps text-label-caps uppercase text-steel-gray">Tons Per Annum</div>
               </div>
-              <div className="text-center p-8 glass-card rounded-brand active-glow transition-all">
-                <div className="font-display-lg text-headline-md text-secondary mb-2">2-120</div>
+              <div className="text-center p-8 interactive-card rounded-brand active-glow transition-all reveal delay-400">
+                <div className="font-display-lg text-headline-md text-secondary mb-2">
+                  2 - <AnimatedCounter start={2} end={120} />
+                </div>
                 <div className="font-label-caps text-label-caps uppercase text-steel-gray">Piece Weight (KG)</div>
               </div>
             </div>
