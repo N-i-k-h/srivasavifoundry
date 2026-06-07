@@ -78,31 +78,58 @@ function App() {
 
   // Scroll reveal animation handler using Intersection Observer
   useEffect(() => {
-    // We add a tiny delay to ensure all dynamically generated DOM nodes are fully rendered
-    const timer = setTimeout(() => {
-      const revealElements = document.querySelectorAll('.reveal, .reveal-fade, .reveal-left, .reveal-right');
-      
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px 0px -8% 0px', // Trigger when element is slightly inside viewport
-        threshold: 0.02
-      };
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px 50px 0px', // Trigger slightly before entering viewport to prevent hidden elements on mobile
+      threshold: 0.01
+    };
 
-      const observerCallback = (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            // Unobserve after animating to keep it clean and smooth
-            observer.unobserve(entry.target);
-          }
-        });
-      };
+    const observerCallback = (entries: IntersectionObserverEntry[], observerInstance: IntersectionObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observerInstance.unobserve(entry.target);
+        }
+      });
+    };
 
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
-      revealElements.forEach((el) => observer.observe(el));
-    }, 150);
+    const scrollObserver = new IntersectionObserver(
+      (entries) => observerCallback(entries, scrollObserver),
+      observerOptions
+    );
 
-    return () => clearTimeout(timer);
+    const observeElements = () => {
+      const revealElements = document.querySelectorAll(
+        '.reveal:not(.active), .reveal-fade:not(.active), .reveal-left:not(.active), .reveal-right:not(.active)'
+      );
+      revealElements.forEach((el) => {
+        scrollObserver.observe(el);
+      });
+    };
+
+    // Run observation initially
+    observeElements();
+
+    // Set up MutationObserver to re-observe elements when the DOM updates
+    const mutationObserver = new MutationObserver(() => {
+      observeElements();
+    });
+
+    mutationObserver.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Also run observeElements on scroll and resize to capture anything that was missed
+    window.addEventListener('scroll', observeElements, { passive: true });
+    window.addEventListener('resize', observeElements, { passive: true });
+
+    return () => {
+      scrollObserver.disconnect();
+      mutationObserver.disconnect();
+      window.removeEventListener('scroll', observeElements);
+      window.removeEventListener('resize', observeElements);
+    };
   }, [currentPage, banners, clients, products, certifications, ceo, employees]);
 
   // Card mouse hover spotlight reflection effect

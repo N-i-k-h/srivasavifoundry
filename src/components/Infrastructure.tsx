@@ -9,16 +9,16 @@ const Infrastructure: React.FC = () => {
       <div className="max-w-container-max mx-auto px-margin-desktop">
         
         {/* Section Header */}
-        <div className="hidden md:block text-center mb-10 space-y-4 reveal">
-          <span className="font-label-caps text-label-caps text-secondary uppercase tracking-[0.2em]">World Class Infrastructure</span>
-          <h2 className="font-headline-md text-headline-md uppercase text-on-surface">Integrated Manufacturing Facility</h2>
+        <div className="text-center mb-8 md:mb-10 space-y-3 md:space-y-4 reveal">
+          <span className="font-label-caps text-xs md:text-label-caps text-secondary uppercase tracking-[0.2em] block">World Class Infrastructure</span>
+          <h2 className="font-headline-md text-2xl md:text-headline-md uppercase text-on-surface px-4 md:px-0">Integrated Manufacturing Facility</h2>
         </div>
 
         {/* Bento Grid layout */}
-        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-12 gap-6 min-h-[320px] md:min-h-0 pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
+        <div className="flex md:grid overflow-x-auto snap-x md:overflow-visible grid-cols-1 md:grid-cols-12 gap-6 min-h-[350px] md:min-h-0 pb-4 md:pb-0 hide-scrollbar -mx-6 px-6 md:mx-0 md:px-0">
           
           {/* Spectro Lab */}
-          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group bg-tertiary border border-outline-variant/10 shadow-sm shrink-0 reveal delay-100">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 h-[350px] md:h-auto rounded-brand overflow-hidden relative group bg-tertiary border border-outline-variant/10 shadow-sm shrink-0 reveal delay-100">
             <img 
               alt="Spectro Lab" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60" 
@@ -33,7 +33,7 @@ const Infrastructure: React.FC = () => {
           </div>
 
           {/* Moulding Section */}
-          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0 reveal delay-250">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 h-[350px] md:h-auto rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0 reveal delay-250">
             <img 
               alt="Moulding Section" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
@@ -48,7 +48,7 @@ const Infrastructure: React.FC = () => {
           </div>
 
           {/* Quality Testing */}
-          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0 reveal delay-400">
+          <div className="min-w-[85vw] md:min-w-0 snap-center md:col-span-4 md:row-span-1 h-[350px] md:h-auto rounded-brand overflow-hidden relative group border border-outline-variant/10 shadow-sm shrink-0 reveal delay-400">
             <img 
               alt="Inspection" 
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
